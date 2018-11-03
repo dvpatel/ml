@@ -19,6 +19,8 @@
 %% Initialization
 clear ; close all; clc
 
+pkg load image ;
+
 %% Setup the parameters you will use for this exercise
 input_layer_size  = 400;  % 20x20 Input Images of Digits
 hidden_layer_size = 25;   % 25 hidden units
@@ -34,6 +36,10 @@ num_labels = 10;          % 10 labels, from 1 to 10
 fprintf('Loading and Visualizing Data ...\n')
 
 load('ex3data1.mat');
+
+%  Large samples with 60000 images ;  Problem is images are rotated ;
+%  load('mnist400.mat');
+
 m = size(X, 1);
 
 % Randomly select 100 data points to display
@@ -87,4 +93,12 @@ for i = 1:m
       break
     end
 end
+
+
+
+%  My own test.  Use 400x400 canvas in gimp;  Red 
+% Load the weights into variables Theta1 and Theta2
+vectorImage= imageTo20x20Gray("number.jpg",0,0) ;
+pred = predict(Theta1, Theta2, vectorImage);
+fprintf('\nNeural Network Prediction: %d (digit %d)\n', pred, mod(pred, 10));
 
