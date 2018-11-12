@@ -123,6 +123,7 @@ X = reshape(A, img_size(1) * img_size(2), 3);
 
 % Run your K-Means algorithm on this data
 % You should try different values of K and max_iters here
+%  DP:  K represents compression factor from 24-bit color to 16-bit color.
 K = 16; 
 max_iters = 10;
 

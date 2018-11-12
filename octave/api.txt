@@ -1,0 +1,4 @@
+{"meta":{"fesl_endpoint":"http://fesl-basecamp.rdc.moveaws.com/median_prices?app_name=realtor_dot_com\u0026app_version=8.0.0.1\u0026city=Sharon\u0026search_type=city\u0026state_code=MA","params":{},"method":"get","response_code":200,"success":true,"errors":[],"api_debug":[{"api_url":"http://markettrends.geo.moveaws.com/city/Sharon_MA","start_time":"","end_time":"","response_time":"0.013067s"},{"api_url":"http://markettrends.geo.moveaws.com/city/Sharon_MA","start_time":"","end_time":"","response_time":"0.013067s"}],"warnings":[],"total_response_time":"0.018s"},"data":{"price_per_sqft":260,"median_listing_price":572444,"median_rent_price":null,"median_listing_price_display":"$572,444.00","price_per_sqft_display":"$260.00","median_rent_price_display":null}}
+
+
+http://fesl-basecamp.rdc.moveaws.com/median_prices?app_name=realtor_dot_com&app_version=8.0.0.1&city=Sharon&search_type=city&state_code=MA
