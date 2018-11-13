@@ -235,3 +235,32 @@ for i = 1:length(my_ratings)
                  movieList{i});
     end
 end
+
+
+%% ================== Part 9: Find related movies ====================
+
+%  X, Theta ;
+
+
+
+for j = 1:length(X)
+  movieId = j;
+  xD(movieId,1) = 0 ;
+  fprintf('\nMovie: %s ( %.1f stars) \n', movieList{movieId}, my_predictions(movieId));
+
+  for i = 1:length(X)
+    if (i != movieId)
+      D = X(movieId,:)-X(i,:) ;
+      xD(i,1) = D*D' ;
+    end
+  end
+
+  [movie, indx] = sort(xD, 'ascend');
+  for i=2:11
+    j = indx(i);
+    fprintf('Similar Top 10 Movie: %s ( %.1f stars) \n', movieList{j}, my_predictions(j));
+  end
+
+  pause ;
+end
+

@@ -41,22 +41,19 @@ Theta_grad = zeros(size(Theta));
 %
 
 %  IMPORTANT!!!
-%  Multiply by R to work with only Rated values ;
-err = (X*Theta')-Y ;
-err = R.*err ;
-
 %  accumulating the cost for user j and movie i only if R(i, j) = 1.
-sR = (err.^2) ;
+err = R.*[(X*Theta')-Y] ;
+errSqr = (err.^2) ;
 
 %  Cost Function ;
-J =  1/2 * sum(sum(sR)) ;
+J =  1/2 * sum(errSqr(:)) ;
 
 %  Gradient Descent
 X_grad = err * Theta ;
 Theta_grad = err' * X ;
 
 %  Regularized Cost Function
-J = J + (lambda / 2) * (sum(sum(Theta.*Theta)) + sum(sum(X.*X))) ;
+J = J + (lambda / 2) * [sum(sum(Theta.^2)) + sum(sum(X.^2))] ;
 
 %  Regularized Gradient ;
 X_grad = X_grad + lambda * X ;
